@@ -15,6 +15,15 @@ class CreateTherapyReportsTable extends Migration
     {
         Schema::create('therapy_reports', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('date');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->text('therapy_name');
+            $table->text('children_id');
+            $table->text('therapist_id');
+            $table->text('description')->nullable();
+            $table->unsignedBigInteger('rating')->nullable();
+            $table->boolean('mark_as_done');
             $table->timestamps();
         });
     }

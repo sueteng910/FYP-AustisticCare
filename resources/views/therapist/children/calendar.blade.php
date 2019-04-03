@@ -62,21 +62,14 @@
   
                         <div class="col-xs-3 col-sm-3 col-md-3">
                           <div class="form-group">
-                                  <label for="start_date">Start Date</label>
+                                  <label for="start_date">Date</label>
                             <div class="">
                                   <input type="date" class="form-control" id="start_date" name = "start_date" >
                             </div>
                           </div>
                         </div>
   
-                        <div class="col-xs-3 col-sm-3 col-md-3">
-                          <div class="form-group">
-                                  <label for="end_date">End Date</label>
-                            <div class="">
-                                  <input type="date" class="form-control" id="end_date" name = "end_date" >
-                            </div>
-                          </div>
-                        </div>
+                        
                         <div class="col-xs-4 col-sm-4 col-md-4">
                                 <div class="form-group">
                                         <label for="title">Start Time</label>

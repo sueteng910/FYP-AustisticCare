@@ -26,6 +26,9 @@ Route::resource('/admin/children','ChildrenController');
 Route::get('/therapist/children', 'PagesController@therachildren');
 Route::get('/therapist/children/calendar/{id}', 'ScheduleController@index');
 Route::post('/therapist/children', 'ScheduleController@addEvent')->name('yo');
+
+Route::get('/therapist/schedule', 'ScheduleController@showCalendar');
+Route::get('/therapist/children/therapyreports/{id}', 'TherapyController@show');
 //Route::post('/admin/adminviewchildren','ChildrenController');
 
 
