@@ -21,10 +21,18 @@ class CreateTherapyReportsTable extends Migration
             $table->text('therapy_name');
             $table->text('children_id');
             $table->text('therapist_id');
+            $table->unsignedBigInteger('goal')->nullable();
             $table->text('description')->nullable();
             $table->unsignedBigInteger('rating')->nullable();
+            $table->unsignedBigInteger('progress')->nullable();
             $table->boolean('mark_as_done');
             $table->timestamps();
+        });
+        Schema::enableForeignKeyConstraints();
+        Schema::table('therapy_reports', function (Blueprint $table) {
+        
+            $table->foreign('goal')->references('id')->on('goals')->onDelete('cascade');
+
         });
     }
 

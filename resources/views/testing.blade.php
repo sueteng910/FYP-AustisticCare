@@ -1,0 +1,1 @@
+<img src="http://localhost:8000/admin/therapist/validation" width="100" height="100">

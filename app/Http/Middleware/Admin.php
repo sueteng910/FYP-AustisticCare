@@ -18,6 +18,9 @@ class Admin
         if (Auth::check() && Auth::user()->role == 'admin') {
             return $next($request);
         }
+        else if (Auth::check() && Auth::user()->role == 'mother'){
+            return redirect('/mother/home');
+        }
         
         else {
             return redirect('/therapist/home');

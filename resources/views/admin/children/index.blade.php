@@ -42,8 +42,7 @@
                       <th><strong>Age</strong></th>
                       
                       <th><strong>Image</strong></th>
-                      <th>Edit</th>
-                      <th>Delete</th>
+                      <th>Option</th>
                   
                   </tr>
                   
@@ -55,8 +54,7 @@
                       <th>{{$data->name}}</th>
                       <th>{{$data->age}}</th>     
                       <th><img src="/images/{{$data->children_pic}}"  style="width:200px;height:200px;"></th>
-                      <th><a href="{{url('admin/edit-products')}}/{{$data->id}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit"></i></a></th>
-                      <th><a href="{{url('deleteproducts')}}/{{$data->id}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i></a></th>
+                      <th><a href="{{url('admin/children/profile')}}/{{$data->id}}" class="btn btn-default btn-sm"></i>View</a></th>
                       
                     
                   </tr>

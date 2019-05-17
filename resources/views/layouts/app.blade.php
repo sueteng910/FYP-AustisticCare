@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        
+            @section('sidebar')
 
         <main class="py-4">
             @yield('content')

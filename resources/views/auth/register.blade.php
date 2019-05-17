@@ -24,8 +24,42 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                                <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required autofocus>
+    
+                                    @if ($errors->has('phone'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('phone') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
 
                         <div class="form-group row">
+                                <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
+    
+                                <div class="col-md-6">
+                                        <select name="role" id= "role" style="text-align: center; " class="form-control">
+                                                <div class="option">
+                                                    <option value="" disabled selected>Select your role</option>
+                                                      <option value="therapist">therapist</option>
+                                                      <option value="mother">parent</option>
+                                                </div>
+                                        </select>
+                                    @if ($errors->has('role'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('role') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        
+
+                        <div class="form-group row">
+
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">

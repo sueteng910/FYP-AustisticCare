@@ -75,10 +75,16 @@
         <body>
         
         <div class="sidenav">
-          <a href="#about">About</a>
-          <a href="#services">Therapist</a>
-          <a href="#clients">Parents</a>
-          <a href="#contact">Therapy Report</a>
+          <a href="/admin/about">About</a>
+          <button class="dropdown-btn">Therapist 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a href="/admin/therapist/validation">Validation</a>
+            <a href="/admin/therapist/view">View</a>
+
+          </div>        
+          
           <button class="dropdown-btn">Children 
             <i class="fa fa-caret-down"></i>
           </button>
@@ -87,7 +93,6 @@
             <a href="/admin/children/create">Add Children</a>
 
           </div>
-          <a href="#contact">Search</a>
         </div>
         
         

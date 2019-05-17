@@ -9,5 +9,7 @@ class Schedule extends Model
 {
     //
     protected $fillable = ['title','start_date','end_date', 'start_time', 'end_time', 'recurring'];
-
+    public function goal()  {
+        return $this->belongsTo(Goal::class);
+    }
 }

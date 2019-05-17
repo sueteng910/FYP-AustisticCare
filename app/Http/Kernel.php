@@ -63,6 +63,8 @@ class Kernel extends HttpKernel
         'admin' => \AutisticCare\Http\Middleware\Admin::class,
         //'agent' => AutisticCare\Http\Middleware\Agent::class,
         'therapist' => \AutisticCare\Http\Middleware\Therapist::class,
+        'mother' => \AutisticCare\Http\Middleware\Mother::class,
+
     ];
 
     /**

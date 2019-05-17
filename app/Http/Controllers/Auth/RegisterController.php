@@ -7,6 +7,7 @@ use AutisticCare\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,36 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/therapist/home';
+    //protected $redirectTo = '/therapist/home';
+
+    protected function redirectTo( ) {
+        if (Auth::check() && Auth::user()->role == 'therapist' ) {
+            if(Auth::user()->validated == '1')  {
+                return '/therapist/home';
+
+                }
+            else{            
+                return '/therapist/validation';
+
+
+             }
+
+            }
+        else if (Auth::check() && Auth::user()->role == 'mother' )  {
+            if ( Auth::user()->validated == '1')    {
+                return '/mother/home';
+
+            }
+            else{
+                return '/mother/validation';
+
+            }
+
+        }
+        else {
+            return '/admin/home';
+        }
+    }
 
     /**
      * Create a new controller instance.
@@ -67,8 +97,13 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'role'=> $data['role'],
             'password' => Hash::make($data['password']),
-            
+          'phone'=> $data['phone'],
         ]);
+    }
+
+    public function showRole()  {
+        return view ('auth/showRole');
     }
 }

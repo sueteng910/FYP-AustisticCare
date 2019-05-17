@@ -33,8 +33,7 @@
       
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Full Calendar Example</div>
-                {!! $newid !!}
+            <div class="panel-heading">Schedule a Therapy for {{$children->name}}</div>
 
                 <div class="panel-body">
                     <form method="POST" action="{{action('ScheduleController@addEvent', '$newid')}}" accept-charset="UTF-8" data-parsley-validate="" enctype="multipart/form-data">
@@ -50,12 +49,36 @@
                             @endif
   
                         </div>
-  
-                        <div class="col-xs-4 col-sm-4 col-md-4">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                        <label for="goal">Goal</label>
+                                        <div class="">
+                                           
+                                            <select name="goal" class="form-control">
+                                                    @forelse ($goal as $goal)
+                                                    <option value="{{$goal->id}}" class="form-control">{{$goal->title}}</option>
+                                                   
+                                                 
+                                            @empty
+                                                
+                                            @endforelse
+                                        </select> 
+                                                                                  </div>
+                                </div>
+                              </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
                           <div class="form-group">
                                   <label for="title">Therapy Title</label>
                                   <div class="">
-                                  <input type="text" class="form-control" id="title" name = "title" aria-describedby="emailHelp" placeholder="Enter name">
+                                        <select name="title" class="form-control">
+                                                @forelse ($therapytypes as $therapytypes)
+                                                <option value="{{$therapytypes->name}}" class="form-control">{{$therapytypes->name}}</option>
+                                               
+                                             
+                                        @empty
+                                            
+                                        @endforelse
+                                    </select> 
                               </div>
                           </div>
                         </div>
@@ -70,7 +93,7 @@
                         </div>
   
                         
-                        <div class="col-xs-4 col-sm-4 col-md-4">
+                        <div class="col-xs-3 col-sm-3 col-md-3">
                                 <div class="form-group">
                                         <label for="title">Start Time</label>
                                         <div class="">
@@ -78,7 +101,7 @@
                                     </div>
                                 </div>
                               </div>
-                              <div class="col-xs-4 col-sm-4 col-md-4">
+                              <div class="col-xs-3 col-sm-3 col-md-3">
                                     <div class="form-group">
                                             <label for="title">End Time</label>
                                             <div class="">

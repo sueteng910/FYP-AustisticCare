@@ -44,6 +44,8 @@
                       <th><strong>Image</strong></th>
                       <th>Edit</th>
                       <th>Delete</th>
+                      <th>Give HW</th>
+
                   
                   </tr>
                   
@@ -57,6 +59,8 @@
                       <th><img src="/images/{{$data->children_pic}}"  style="width:200px;height:200px;"></th>
                       <th><a class="btn btn-primary" href="{{url('therapist/children/calendar')}}/{{$data->id}}" role="button">Schedule Therapy</a></th>
                       <th><a class="btn btn-primary" href="{{url('therapist/children/therapyreports')}}/{{$data->id}}" role="button">report</a>
+                        <th><a class="btn btn-primary" href="{{url('therapist/children/homeworkList')}}/{{$data->id}}" role="button">homework</a>
+
                       </th>
                       
                   </tr>

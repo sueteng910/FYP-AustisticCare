@@ -75,17 +75,17 @@
         <body>
         
         <div class="sidenav">
-          <a href="#about">About</a>
-          <a href="/therapist/children">Children</a>
+          <a href="/therapist/home">Home</a>
+          <a href="/therapist/children">Children List</a>
           <button class="dropdown-btn">Therapy 
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-container">
-            <a href="/therapist/schedule">Schedule</a>
-            <a href="/therapist/children/therapyreports">Therapy Report</a>
+            <a href="/therapist/schedule">My Schedule</a>
+            <a href="/therapist/reports">Therapy Report</a>
 
           </div>
-          <a href="#contact">Search</a>
+          
         </div>
         
         

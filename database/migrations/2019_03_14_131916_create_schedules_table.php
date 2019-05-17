@@ -24,7 +24,14 @@ class CreateSchedulesTable extends Migration
             $table->boolean('recurring');
             $table->text('children_id');
             $table->text('therapist_id');
+            $table->unsignedBigInteger('goal')->nullable();
             $table->timestamps();
+        });
+        Schema::enableForeignKeyConstraints();
+        Schema::table('schedules', function (Blueprint $table) {
+        
+            $table->foreign('goal')->references('id')->on('goals')->onDelete('cascade');
+
         });
     }
 

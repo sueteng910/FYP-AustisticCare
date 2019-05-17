@@ -20,6 +20,9 @@ class Therapist
         if (Auth::check() && Auth::user()->role == 'therapist') {
             return $next($request);
         }
+        else if(Auth::check() && Auth::user()->role == 'mother'){
+            return redirect('/mother/home');
+        }
         
         else {
             return redirect('/admin/home');

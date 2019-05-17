@@ -36,9 +36,24 @@
                             <input type="text" class="form-control" id="name" name = "name" aria-describedby="emailHelp" placeholder="Enter name">
                           </div>
                           <div class="form-group">
-                            <label for="age">Age</label>
-                            <input type="number" class="form-control" id="age" name = "age" placeholder="Age">
+                            <label for="age">Birthday</label>
+                            <input type="date" class="form-control" id="birthday" name = "birthday" placeholder="birthday">
                           </div>
+                          <div class="form-group">
+                              <label for="myKID">myKID</label>
+                              <input type="text" class="form-control" id="myKID" name = "myKID" placeholder="myKID">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select name="gender" id= "gender" style="text-align: center; width:500px;" class="custom-select sources">
+                                    <div class="option">
+                                        <option value="" disabled selected>Select Gender</option>
+                                          <option value="male">Male</option>
+                                          <option value="female">Female</option>
+
+                                    </div>
+                                  </select>                             
+                                 </div>
                           <div class="form-group">
                               <label for="parent">Parent</label>
                               <br>

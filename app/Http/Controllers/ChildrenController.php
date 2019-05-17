@@ -18,32 +18,29 @@ class ChildrenController extends Controller
     public function store(Request $request) {
         
         $validatedData = $request->validate([
-            'name' => 'required',
-            'age' => 'required|numeric',
+            'name' => 'required'
             
           
             
         ]);
         $children = new Children;
         $children->name = $request ->input('name');
-        $children->age = $request ->input('age');
-        $children->mother_id = $request ->input('parent');
+        $children->birthday = $request ->input('birthday');
+        $children->gender = $request ->input('gender');
+
+        $children->myKID = $request ->input('myKID');
         $children->therapist_id = $request ->input('therapist');
 
         $children ->save();
         
 
+        
         //$data = $request->image;
         $data_id = $children ->id;
         $image = $request->children_pic;
         $extension = $image->getClientOriginalExtension();
-        //Storage::disk('public')->put($image->getFilename().'.'.$extension,  File::get($image));
-
         $image_name = $data_id.'.'.$extension;
-        //$image_name = $image->getFilename().'.'.$extension;
-        //$image_name=$image->getClientOriginalName();
         $image->move('images',$image_name);
-        
         $children->children_pic = $image_name;
         $children ->save();
 
