@@ -54,18 +54,7 @@
                                     </div>
                                   </select>                             
                                  </div>
-                          <div class="form-group">
-                              <label for="parent">Parent</label>
-                              <br>
-                              <select name="parent" id= "parent" style="text-align: center; width:500px;" class="custom-select sources">
-                                <div class="option">
-                                    <option value="" disabled selected>Select the parent</option>
-                                  @foreach($mothers as $mother)
-                                      <option value="{{$mother->id}}">{{$mother->mother_name}}</option>
-                                  @endforeach
-                                </div>
-                              </select>
-                            </div>
+                       
                             <div class="form-group">
                                 <label for="parent">Therapist</label>
                                 <br>

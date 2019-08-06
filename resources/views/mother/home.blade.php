@@ -19,6 +19,10 @@
    
         <div class="row">
                 <div class="col-md-12">
+                       
+                        @if ($homework_count > 0 )
+                        <div class="alert alert-danger">You have {{ $homework_count }} undone homework </div>
+                        @endif
                         <div class="card">
                             <div class="card-header">Profile</div>
                             <div class="row">

@@ -41,14 +41,17 @@ class TherapyController extends Controller
     }
 
     public function update(Request $request, $id=null)   {
-        $id = $request['newid'];
+        $this->validate($request, [
+            'description' =>'required',
+            'rating'=>'required'
+        ]);
+        $id = $request->input('newid');
         $report = TherapyReport::find($id);
-        $goal = $report->goal;
-
-        $report->description = $request['description'];
-        $report->mark_as_done = 1;
-        $report->rating = $request['rating'];
-        $report->progress = $request['performance'];
+        //$goal = $report->goal;
+        $report->description = $request->input('description');
+        $report->mark_as_done = '1';
+        $report->rating = $request->input('rating');
+        $report->progress = $request->input('performance');
         $report->save();
         return Redirect::to('/therapist/children');
     }
@@ -65,5 +68,11 @@ class TherapyController extends Controller
         ->get();
 
         return view ('/therapist/reports')->with(compact('done'))->with(compact('undone'));    
+    }
+
+    public function showDetails($id)    {
+        $report = TherapyReport::where('id', $id)->first();
+
+        return view ('/therapist/children/details')->with(compact('report'));
     }
 }

@@ -109,5 +109,16 @@ public function about() {
     return view('/admin/about');
 }
     
+
+public function childrenReportList($id)    {
+    $report = TherapyReport::where('children_id', $id)->where('mark_as_done', '1')->get();
+
+    return view ('/admin/children/report')->with(compact('report'));
+}
+
+public function reportDetails($id)  {
+    $report = TherapyReport::where('id', $id)->first();
+    return view ('/admin/children/details')->with(compact('report'));
+}
 }
 

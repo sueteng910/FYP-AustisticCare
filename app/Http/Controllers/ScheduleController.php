@@ -64,7 +64,7 @@ class ScheduleController extends Controller
                 alert($newid);
                 
             }',
-            'viewRender' => 'function() {alert("Callbacks!");}',
+            //'viewRender' => 'function() {alert("Callbacks!");}',
             'select' => 'function() {
                 alert();
 
@@ -179,7 +179,7 @@ class ScheduleController extends Controller
                 alert("sasa");
                 
             }',
-            'viewRender' => 'function() {alert("Callbacks!");}',
+            //'viewRender' => 'function() {alert("Callbacks!");}',
             'select' => 'function() {
                 alert();
 

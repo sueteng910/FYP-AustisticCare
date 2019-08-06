@@ -86,10 +86,10 @@ class MotherController extends Controller
         }
 
         //line chart
-       
+       $homework_count = Homework::where('children_id', $id)->where('complete', '0')->count();
 
        // $progress = TherapyReport::where();
-        return view ('/mother/home')->with(compact('childrens'))->with(compact('goal_count'))
+        return view ('/mother/home')->with(compact('childrens'))->with(compact('goal_count'))->with(compact('homework_count'))
         ->with(compact('category'))->with(compact('goal'))->with(compact('add'))->with(compact('loop_1'))->with(compact('count_arr',json_encode($count_arr,JSON_NUMERIC_CHECK)))
         ->with(compact('thera_0',json_encode($thera_0,JSON_NUMERIC_CHECK)))
         ->with(compact('thera_1',json_encode($thera_1,JSON_NUMERIC_CHECK)))
@@ -143,7 +143,7 @@ class MotherController extends Controller
                 alert($newid);
                 
             }',
-            'viewRender' => 'function() {alert("Callbacks!");}',
+           // 'viewRender' => 'function() {alert("Callbacks!");}',
             'select' => 'function() {
                 alert();
 

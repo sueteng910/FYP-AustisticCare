@@ -36,10 +36,15 @@ class PagesController extends Controller
        // $month = 
         //$childrens->created_at->month
 
-        return view('/therapist/home')->with(compact('childrens'))
+        $report_count = TherapyReport::where('therapist_id', $id)->where('mark_as_done', '0')->count();
+        //$now = Carbon::now();
+        
+
+        return view('/therapist/home')->with(compact('childrens'))->with(compact('report_count'))
         ->with(compact('female',json_encode($female,JSON_NUMERIC_CHECK)))
         ->with(compact('male',json_encode($male,JSON_NUMERIC_CHECK)));
     }
+
     public function adminhome() {
         $childrens = Children::all();
         $therapist = User::where('role','therapist')->where('validated', '1');
@@ -80,7 +85,7 @@ class PagesController extends Controller
         $thera_1=[];
         $thera_2=[];
         
-        foreach ($goal as $goals)    {
+        foreach ($goal as $goals)    { 
             $loop_2 = 0;
             foreach($therapy_type as $therapy_types)    {
                 $count_arr[$loop_1][$loop_2]= TherapyReport::where('therapy_name', $therapy_types)
@@ -141,7 +146,7 @@ class PagesController extends Controller
         ]);
 
         if ($validator-> fails())   {
-            \Session::flash('message', 'Please enter the valid details');
+            \Session::flash('warnning', 'Please enter the valid details');
             return Redirect::back();
         }
 

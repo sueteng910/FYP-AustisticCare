@@ -28,8 +28,12 @@
                                     <div class="col-lg-4">
                                         <p>Name : {{$childrens->name}}</p>
                                         <p>Age : {{$childrens->age}}</p>
+                                        @if ($childrens->mother )    
                                         <p>Parent : {{$childrens->mother->name}}</p>
-                                        <p>Enrolled since : {{$childrens->created_at->month}} {{$childrens->created_at->year}}</p>
+                                        @else
+                                        <p>Parent : None</p>
+                                        @endif                                        
+                                        <p>Enrolled since : {{$childrens->created_at->month}} /{{$childrens->created_at->year}}</p>
                                         <th><a class="btn btn-primary" href="{{url('therapist/children/calendar')}}/{{$childrens->id}}" role="button">Schedule Therapy</a></th>
                                         <th><a class="btn btn-primary" href="{{url('therapist/children/therapyreports')}}/{{$childrens->id}}" role="button">Report</a>
                                           <th><a class="btn btn-primary" href="{{url('therapist/children/homeworkList')}}/{{$childrens->id}}" role="button">Homework</a>
@@ -86,6 +90,8 @@
                                                     </div>
                                                   </div>
                                                 </div>
+                                            </form>
+
                           
                                                 <div class="col-lg-6">
                                                         <div class="form-group">
@@ -105,7 +111,6 @@
                                             </div>
                                                 
                                               </div>
-                                              </form>
                                 
                                         </div>            
                             </div>

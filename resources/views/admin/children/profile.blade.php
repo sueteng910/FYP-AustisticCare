@@ -28,9 +28,14 @@
                                     <div class="col-lg-4">
                                         <p>Name : {{$childrens->name}}</p>
                                         <p>Age : {{$childrens->age}}</p>
+                                        @if ($childrens->mother )    
                                         <p>Parent : {{$childrens->mother->name}}</p>
+                                        @else
+                                        <p>Parent : None</p>
+                                        @endif
                                         <p>Enrolled since : {{$childrens->created_at->month}} {{$childrens->created_at->year}}</p>
-                                      
+                                        <th><a class="btn btn-primary" href="{{url('admin/children/report')}}/{{$childrens->id}}" role="button">View Report</a></th>
+
                                     </div>
                                     
                                    

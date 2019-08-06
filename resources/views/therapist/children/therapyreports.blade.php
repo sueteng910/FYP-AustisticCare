@@ -97,7 +97,7 @@
                         <th><strong>Children</strong></th>
                         <th><strong>Therapy</strong></th>
                         
-                        <th>Edit</th>
+                        <th>Option</th>
                     
                     </tr>
                     
@@ -110,7 +110,9 @@
                         <th>{{$data->children->name}}</th>
                         <th>{{$data->therapy_name}}</th>     
                         <th><a class="btn btn-primary" href="{{url('therapist/children/reports')}}/{{$data->id}}" role="button">Update</a></th>
-                        </th>
+                        <th><a class="btn btn-primary" href="{{url('therapist/children/details')}}/{{$data->id}}" role="button">View</a></th>
+ 
+                      </th>
                         
                     </tr>
                     @endforeach

@@ -61,3 +61,7 @@ Route::get('/therapist/children/homeworkReport/{id}', 'HomeworkController@displa
 Route::get('/admin/children/profile/{id}', 'AdminController@childrenProfile');
 Route::get('/admin/about', 'AdminController@about');
 Route::get('/testing', 'TestController@test');
+
+Route::get('/admin/children/report/{id}', 'AdminController@childrenReportList');
+Route::get('/admin/children/details/{id}', 'AdminController@reportDetails');
+Route::get('/therapist/children/details/{id}', 'TherapyController@showDetails');

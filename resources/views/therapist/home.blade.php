@@ -48,6 +48,10 @@
         @include('inc.therapistsidenav')
         <div class="row">
                 <div class="col-md-12">
+                        <?php $report_count ?>
+                     @if ($report_count > 0 )
+                         <div class="alert alert-danger">You have {{ $report_count }} undone report </div>
+                         @endif
                         <div class="card">
                             <div class="card-header">Children</div>
                             
@@ -134,55 +138,7 @@
                 
                
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                        <div class="card">
-                                        <div class="card-header">Total therapy of this month</div>
-                                        <div class="col-md-12" >
-                                          <div class="chart-container" style="position: relative; height:40vh; width:40vw">
-                
-                                          <canvas id="myChart" style = "height:40vh; width:40vw"></canvas>
-                                          </div>
-                                          <script>
-                                              //var data_1 = $count_arr[$goal_count][0];
-                                          var ctx = document.getElementById("myChart");
-                                          var myChart = new Chart(ctx, {
-                                              type: 'pie',
-                                              data: {
-                                                  labels: ['Female', 'Male'],
-                                                  datasets: [{
-                                                      fill: false, 
-                                                      label: '# of Votes',
-                                                      data: [{{$female}}, {{$male}}],
-                                                      backgroundColor: [
-                                                          'rgba(255, 99, 132, 0.2)',
-                                                          'rgba(54, 162, 235, 0.2)',
-                                                          'rgba(255, 206, 86, 0.2)',
-                                                          'rgba(75, 192, 192, 0.2)',
-                                                          'rgba(153, 102, 255, 0.2)',
-                                                          'rgba(255, 159, 64, 0.2)'
-                                                      ],
-                                                      borderColor: [
-                                                          'rgba(255, 99, 132, 1)',
-                                                          'rgba(54, 162, 235, 1)',
-                                                          'rgba(255, 206, 86, 1)',
-                                                          'rgba(75, 192, 192, 1)',
-                                                          'rgba(153, 102, 255, 1)',
-                                                          'rgba(255, 159, 64, 1)'
-                                                      ],
-                                                      borderWidth: 1
-                                                  }]
-                                              },
-                                              options: {
-                                                  
-                                              }
-                                          });
-                                          </script>
-                                        
-                                        </div>
-                                        
-                                    </div>
-                                </div>
+                            
                         </div>
                 </div>
                 </div>

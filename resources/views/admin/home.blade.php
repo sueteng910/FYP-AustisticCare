@@ -79,7 +79,7 @@
         <div class="row">
           <div class="col-md-12">
                   <div class="card">
-                  <div class="card-header">Total therapy of this month</div>
+                  <div class="card-header">Total children of this month</div>
                   <div class="col-md-12" >
                     <div class="chart-container" style="position: relative; height:40vh; width:40vw">
 
